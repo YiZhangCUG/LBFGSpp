@@ -149,7 +149,7 @@ public:
 int main()
 {
     const int m = 80;
-    const int n = 100;
+    const int n = 120;
     LBFGSBParam<Scalar> param;
     LBFGSBSolver<Scalar> solver(param);
     TestFunc fun(m, n);
