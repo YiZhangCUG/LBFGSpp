@@ -169,6 +169,7 @@ public:
         int k = 1;
         for( ; ; )
         {
+            std::clog << "Iteration: " << k << " fx = " << fx << std::endl;
             // Save the curent x and gradient
             m_xp.noalias() = x;
             m_gradp.noalias() = m_grad;
