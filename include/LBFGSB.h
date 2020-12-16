@@ -144,6 +144,7 @@ public:
         // Early exit if the initial x is already a minimizer
         if(projgnorm <= m_param.epsilon || projgnorm <= m_param.epsilon_rel * x.norm())
         {
+            std::clog << "Already minimized: " << projgnorm << std::endl;
             return 1;
         }
 
@@ -191,6 +192,7 @@ public:
             // Convergence test -- gradient
             if(projgnorm <= m_param.epsilon || projgnorm <= m_param.epsilon_rel * x.norm())
             {
+                std::clog << "Meet gradient criteria." << std::endl;
                 return k;
             }
             // Convergence test -- objective function value
@@ -205,6 +207,7 @@ public:
             // Maximum number of iterations
             if(m_param.max_iterations != 0 && k >= m_param.max_iterations)
             {
+                std::clog << "Meet maximal iteration." << std::endl;
                 return k;
             }
 
