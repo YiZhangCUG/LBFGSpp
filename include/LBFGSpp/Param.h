@@ -217,6 +217,43 @@ public:
         if(wolfe <= ftol || wolfe >= 1)
             throw std::invalid_argument("'wolfe' must satisfy ftol < wolfe < 1");
     }
+
+    inline void show_param() const
+    {
+        std::clog << "===========" << std::endl;
+        std::clog << "LBFGS Setup" << std::endl;
+        std::clog << "-----------" << std::endl;
+        std::clog << "Number of corrections (m): " << m << std::endl;
+        std::clog << "Absolute tolerance (epsilon): " << epsilon << std::endl;
+        std::clog << "Relative tolerance (epsilon_rel): " << epsilon_rel << std::endl;
+        std::clog << "Distance for delta-based convergence test (past): " << past << std::endl;
+        std::clog << "Delta for convergence test (delta): " << delta << std::endl;
+        std::clog << "Maximum number of iterations (max_iterations): " << max_iterations << std::endl;
+
+        std::clog << "Line search method (linesearch): ";
+        switch (linesearch)
+        {
+            case 1:
+                std::clog << "ARMIJO" << std::endl;
+                break;
+            case 2:
+                std::clog << "WOLFE" << std::endl;
+                break;
+            case 3:
+                std::clog << "STRONG_WOLFE" << std::endl;
+                break;
+            default:
+                std::clog << "Unknown" << std::endl;
+                break;
+        }
+
+        std::clog << "Maximum number of trials for the line search (max_linesearch): " << max_linesearch << std::endl;
+        std::clog << "Minimum step length (min_step): " << min_step << std::endl;
+        std::clog << "Maximum step length (max_step): " << max_step << std::endl;
+        std::clog << "Accuracy of the line search (ftol): " << ftol << std::endl;
+        std::clog << "Wolfe condition (wolfe): " << wolfe << std::endl;
+        std::clog << "==========" << std::endl;
+    }
 };
 
 
@@ -373,6 +410,26 @@ public:
             throw std::invalid_argument("'ftol' must satisfy 0 < ftol < 0.5");
         if(wolfe <= ftol || wolfe >= 1)
             throw std::invalid_argument("'wolfe' must satisfy ftol < wolfe < 1");
+    }
+
+    inline void show_param() const
+    {
+        std::clog << "===========" << std::endl;
+        std::clog << "LBFGSB Setup" << std::endl;
+        std::clog << "-----------" << std::endl;
+        std::clog << "Number of corrections (m): " << m << std::endl;
+        std::clog << "Absolute tolerance (epsilon): " << epsilon << std::endl;
+        std::clog << "Relative tolerance (epsilon_rel): " << epsilon_rel << std::endl;
+        std::clog << "Distance for delta-based convergence test (past): " << past << std::endl;
+        std::clog << "Delta for convergence test (delta): " << delta << std::endl;
+        std::clog << "Maximum number of iterations (max_iterations): " << max_iterations << std::endl;
+        std::clog << "Maximum number of subspace-iterations (max_submin): " << max_submin << std::endl;
+        std::clog << "Maximum number of trials for the line search (max_linesearch): " << max_linesearch << std::endl;
+        std::clog << "Minimum step length (min_step): " << min_step << std::endl;
+        std::clog << "Maximum step length (max_step): " << max_step << std::endl;
+        std::clog << "Accuracy of the line search (ftol): " << ftol << std::endl;
+        std::clog << "Wolfe condition (wolfe): " << wolfe << std::endl;
+        std::clog << "==========" << std::endl;
     }
 };
 

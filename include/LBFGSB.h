@@ -236,6 +236,7 @@ public:
             std::cout << "xsm = " << (x + m_drt).transpose() << std::endl;
             std::cout << "f(xsm) = " << fsm << ", ||proj_grad|| = " << projgsmnorm << std::endl << std::endl;*/
 
+            std::clog << "Iteration times: " << k << ", fx = " << fx << "， proj-gnorm = " << projgnorm << ", proj-gnorm/xnorm = " << projgnorm/x.norm() << std::endl;
             k++;
         }
 
