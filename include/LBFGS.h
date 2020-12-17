@@ -96,6 +96,7 @@ public:
         // Early exit if the initial x is already a minimizer
         if(gnorm <= m_param.epsilon || gnorm <= m_param.epsilon_rel * x.norm())
         {
+            std::clog << "Already optimized: " << gnorm << std::endl;
             return 1;
         }
 
@@ -122,6 +123,7 @@ public:
             // Convergence test -- gradient
             if(gnorm <= m_param.epsilon || gnorm <= m_param.epsilon_rel * x.norm())
             {
+                std::clog << "Meet gradient criteria." << std::endl;
                 return k;
             }
             // Convergence test -- objective function value
@@ -136,6 +138,7 @@ public:
             // Maximum number of iterations
             if(m_param.max_iterations != 0 && k >= m_param.max_iterations)
             {
+                std::clog << "Meet maximal iteration." << std::endl;
                 return k;
             }
 
@@ -149,6 +152,8 @@ public:
 
             // Reset step = 1.0 as initial guess for the next line search
             step = Scalar(1);
+
+            std::clog << "Iteration times: " << k << ", fx = " << fx << "， gnorm = " << gnorm << ", gnorm/xnorm = " << gnorm/x.norm() << std::endl;
             k++;
         }
 
