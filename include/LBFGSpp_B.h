@@ -1,8 +1,8 @@
 // Copyright (C) 2020 Yixuan Qiu <yixuan.qiu@cos.name>
 // Under MIT license
 
-#ifndef LBFGSB_H
-#define LBFGSB_H
+#ifndef LBFGSPP_B_H
+#define LBFGSPP_B_H
 
 #include <stdexcept>  // std::invalid_argument
 #include <vector>
@@ -248,4 +248,4 @@ public:
 
 } // namespace LBFGSpp
 
-#endif // LBFGSB_H
+#endif // LBFGSPP_B_H

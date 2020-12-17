@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cp include/LBFGS.h /usr/local/include
-cp include/LBFGSB.h /usr/local/include
+cp include/LBFGSpp.h /usr/local/include/LBFGSpp.h
+cp include/LBFGSpp_B.h /usr/local/include/LBFGSpp_B.h
 cp -r include/LBFGSpp/* /usr/local/include/LBFGSpp
